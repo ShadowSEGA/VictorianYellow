@@ -1,176 +1,201 @@
 
-/* =============================
-   VICTORIAN YELLOW
-   Colourful Victorian RPG
-   ============================= */
+/* GENERAL */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #17152e, #35204c, #172b49);
-    color: #f8e9c8;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+
+  font-family: system-ui, sans-serif;
+  color: #f5eaff;
+
+  background:
+    radial-gradient(circle at top, #432078, #100522 75%);
 }
 
-/* Main game container */
-
-#game {
-    width: 100%;
-    max-width: 650px;
-    background: #242044;
-    border: 5px solid #e0b65a;
-    border-radius: 18px;
-    padding: 25px;
-    box-shadow:
-        0 0 20px #e0b65a55,
-        0 0 50px #8b5cf655;
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
 }
 
-/* Titles */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
 
 h1 {
-    text-align: center;
-    font-size: 30px;
-    color: #f5cf70;
-    text-shadow: 3px 3px #6d355e;
-    letter-spacing: 2px;
+  color: #ffd166;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  text-shadow: 0 0 20px #a855f7;
 }
 
 h2 {
-    text-align: center;
-    color: #f5cf70;
+  color: #ffd166;
 }
 
 .subtitle {
-    text-align: center;
-    color: #d5b8ff;
-    font-size: 12px;
-    letter-spacing: 3px;
+  color: #d8b4fe;
+  font-size: 1.2rem;
 }
 
-/* Panels */
+/* PANELS */
 
-.screen {
-    background: #352d60;
-    border: 3px solid #8f6bc1;
-    border-radius: 12px;
-    padding: 18px;
-    margin: 16px 0;
-    box-shadow: inset 0 0 12px #17152e;
+.panel {
+  background: linear-gradient(145deg, #35165b, #201039);
+
+  border: 3px solid #facc15;
+  border-radius: 24px;
+
+  padding: 25px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 0 25px #9333ea55;
+  text-align: center;
 }
 
-/* Character display */
+.hidden {
+  display: none !important;
+}
+
+/* SPRITE */
 
 .sprite {
-    font-size: 85px;
-    text-align: center;
-    margin: 20px 0;
-    filter: drop-shadow(0 0 10px #f5cf7088);
+  font-size: 100px;
+  margin: 20px;
+  padding: 20px;
+
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  border-radius: 20px;
 }
 
-.name {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    color: #f5cf70;
+/* HP */
+
+.hp-section {
+  max-width: 500px;
+  margin: auto;
 }
-
-.types {
-    text-align: center;
-    margin-top: 8px;
-    color: #d5b8ff;
-}
-
-/* Dialogue */
-
-#log {
-    min-height: 100px;
-    line-height: 1.7;
-    white-space: pre-wrap;
-    color: #fff1d6;
-}
-
-/* Buttons */
-
-button {
-    width: 100%;
-    padding: 14px;
-    margin: 8px 0;
-    background: linear-gradient(135deg, #b64c82, #794db4);
-    color: #fff;
-    border: 2px solid #f5cf70;
-    border-radius: 8px;
-    font-family: monospace;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    background: linear-gradient(135deg, #df699e, #9871d6);
-    box-shadow: 0 0 15px #d5b8ff66;
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: scale(0.97);
-}
-
-/* Health bars */
 
 .bar {
-    width: 100%;
-    height: 14px;
-    background: #17152e;
-    border: 2px solid #f8e9c8;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 8px;
+  width: 100%;
+  height: 25px;
+
+  background: #4b5563;
+  border-radius: 50px;
+  overflow: hidden;
+
+  border: 2px solid #ffffff55;
 }
 
 .fill {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, #44d17a, #b4f26a);
-    transition: width 0.3s;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(90deg, #22c55e, #a3e635);
+  transition: width 0.4s;
 }
 
 .enemy .fill {
-    background: linear-gradient(90deg, #e34b59, #ff9a5a);
+  background: linear-gradient(90deg, #ef4444, #fb923c);
 }
 
-/* Utility classes */
-
-.hidden {
-    display: none !important;
+.types {
+  color: #d8b4fe;
 }
 
-.small {
-    font-size: 12px;
-    color: #d5b8ff;
+/* LOG */
+
+#log {
+  background: #170b29;
+  border: 2px solid #a855f7;
+
+  border-radius: 14px;
+  padding: 20px;
+
+  margin: 20px 0;
+  min-height: 80px;
+
+  font-size: 1.1rem;
 }
 
-/* Responsive */
+/* BUTTONS */
 
-@media (max-width: 480px) {
-    #game {
-        padding: 15px;
-    }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
-    h1 {
-        font-size: 23px;
-    }
+button {
+  min-height: 65px;
+  min-width: 140px;
 
-    .sprite {
-        font-size: 65px;
-    }
+  padding: 18px 24px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  color: white;
+
+  background: linear-gradient(135deg, #a855f7, #7c3aed);
+
+  border: 3px solid #facc15;
+  border-radius: 16px;
+
+  cursor: pointer;
+  touch-action: manipulation;
+
+  transition: transform 0.15s, filter 0.15s;
+}
+
+button:hover {
+  filter: brightness(1.2);
+  transform: scale(1.04);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:focus-visible {
+  outline: 4px solid white;
+  outline-offset: 4px;
+}
+
+.secondary {
+  background: linear-gradient(135deg, #64748b, #475569);
+}
+
+/* QUIZ ANSWERS */
+
+#answers button {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  button {
+    width: 100%;
+    min-height: 75px;
+    font-size: 20px;
+  }
+
+  .sprite {
+    font-size: 80px;
+  }
 }
