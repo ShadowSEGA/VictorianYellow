@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victorian Yellow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>Victorian Yellow</h1>
+      <p class="subtitle">A history adventure!</p>
+    </header>
+
+    <!-- TITLE SCREEN -->
+    <section id="title-screen" class="panel">
+      <h2>Welcome, Historian!</h2>
+      <p>Explore history, challenge famous figures, and test your knowledge.</p>
+      <button onclick="startGame()">START GAME</button>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="game" class="panel hidden">
+      <h2 id="enemy-name">Harry Houdini</h2>
+      <p id="enemy-types" class="types">Ghost / Psychic</p>
+
+      <div class="sprite" id="sprite">
+        🎩
+      </div>
+
+      <div class="hp-section">
+        <p>HP</p>
+        <div class="bar">
+          <div id="hp-fill" class="fill"></div>
+        </div>
+        <p id="hp-text">100 / 100</p>
+      </div>
+
+      <div id="log">
+        Houdini challenges you!
+      </div>
+
+      <div class="actions">
+        <button onclick="fight()">FIGHT</button>
+        <button onclick="showQuiz()">HISTORY QUIZ</button>
+      </div>
+    </section>
+
+    <!-- QUIZ SCREEN -->
+    <section id="quiz" class="panel hidden">
+      <h2>History Quiz</h2>
+      <p id="question">Question goes here</p>
+
+      <div id="answers" class="actions"></div>
+
+      <button class="secondary" onclick="backToBattle()">BACK</button>
+    </section>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
